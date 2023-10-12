@@ -1,31 +1,27 @@
-#include <iostream>
-using namespace std;
-class MyClass {
-private:
-    static int objectCount; // Static member variable to count objects
+#include <iostream> 
+using namespace std; 
 
-public:
-    MyClass() {
-        objectCount++; // Increment the count in the constructor
-    }
+static int  count; 
+class count_me{ 
+    public: 
 
-    // ~MyClass() {
-    //     objectCount--; // Decrement the count in the destructor
-    // }
+    count_me(){ 
 
-    static int getObjectCount() {
-        return objectCount;
-    }
-};
+        count++; 
+    } 
+    int print(){ 
+        cout<<"Number of objects are : "<<count; 
+    } 
 
-int MyClass::objectCount = 0; // Initialize the static member variable
+}; 
 
-int main() {
-    MyClass obj1; // Create the first object
-    MyClass obj2; // Create the second object
-    MyClass obj3; // Create the third object
+int main(){ 
 
-    cout << "Number of objects created: " << MyClass::getObjectCount() << std::endl;
+    count_me t1; 
+    count_me t2; 
+    count_me t3; 
+    t3.print(); 
 
-    return 0;
-}
+    return 0; 
+
+} 
